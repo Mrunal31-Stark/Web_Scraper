@@ -61,7 +61,7 @@ Sheets:
   - `eligibility`
 
 ## How It Works (Flowchart)
-
+```mermaid
 flowchart TD
     A[Start Script] --> B[Load India university target list]
     B --> C[Fetch university page from TopUniversities]
@@ -83,7 +83,7 @@ flowchart TD
     P --> Q[Validate IDs and foreign key integrity]
     Q --> R[Export to Excel file university_courses_xlsx with two sheets]
     R --> S[Done]
-
+```
 ## Data Quality Rules Applied
 
 - Random delay between requests
