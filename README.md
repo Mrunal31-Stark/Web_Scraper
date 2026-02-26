@@ -62,7 +62,6 @@ Sheets:
 
 ## How It Works (Flowchart)
 
-```mermaid
 flowchart TD
     A[Start Script] --> B[Load India university target list]
     B --> C[Fetch university page from TopUniversities]
@@ -72,19 +71,18 @@ flowchart TD
     F --> G{Country is India?}
     G -- No --> H[Skip university]
     G -- Yes --> I[Collect university record with university_id]
-    I --> J[Extract course/program links]
+    I --> J[Extract course program links]
     J --> K[Open each course page]
-    K --> L[Extract fields: course_name, level, discipline, duration, fees, eligibility]
-    L --> M[Clean text, fill missing with N/A, deduplicate]
+    K --> L[Extract fields course_name level discipline duration fees eligibility]
+    L --> M[Clean text fill missing with NA deduplicate]
     M --> N{At least 5 courses collected?}
     N -- No --> K
     N -- Yes --> O[Move to next university]
     H --> O
     O --> P[Build pandas DataFrames]
-    P --> Q[Validate IDs and foreign-key integrity]
-    Q --> R[Export to university_courses.xlsx (2 sheets)]
+    P --> Q[Validate IDs and foreign key integrity]
+    Q --> R[Export to Excel file university_courses_xlsx with two sheets]
     R --> S[Done]
-```
 
 ## Data Quality Rules Applied
 
